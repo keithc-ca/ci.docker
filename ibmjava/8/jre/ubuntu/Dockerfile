@@ -27,21 +27,21 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends wget ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
-ENV JAVA_VERSION 8.0.8.50
+ENV JAVA_VERSION 8.0.8.51
 
 RUN set -eux; \
     ARCH="$(dpkg --print-architecture)"; \
     case "${ARCH}" in \
        amd64|x86_64) \
-         ESUM='ad3486554724df92b79d08ac15460631e2ef3ff44dabb50a1b8c3a3ad7e645f4'; \
+         ESUM='f60e0d5d6ccfd8485f946e32a47aa2f27c8c3ffea4f8be3da44fd485e769296b'; \
          YML_FILE='8.0/jre/linux/x86_64/index.yml'; \
          ;; \
        ppc64el|ppc64le) \
-         ESUM='55de3054399a593a8561a9a6a8d4ebb3820acd0309da1974a51db184f4ab88f2'; \
+         ESUM='3570bdc9bc6171ca97900a592ca0958630abf445980054cf196a565369b31dd8'; \
          YML_FILE='8.0/jre/linux/ppc64le/index.yml'; \
          ;; \
        s390x) \
-         ESUM='8094b571b52e9a77a693ca7130fa1267187bced19fcb1ba7a20bf33bb30eca41'; \
+         ESUM='a2e8c1dc63e33ac0b62072ea27c8ab7aa0e77f16214079fd0d4e4e3ab00770db'; \
          YML_FILE='8.0/jre/linux/s390x/index.yml'; \
          ;; \
        *) \
